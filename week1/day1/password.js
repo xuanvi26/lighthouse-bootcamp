@@ -1,13 +1,27 @@
 let args = process.argv;
 
 const obfuscate = (password) => {
+    let newPassword = '';
     for (i = 0; i < password.length; i++) {
-        if (password.charAt(i) === "a") password.charAt(i) = 4;
-        if (password.charAt(i) === "e") password.charAt(i) = 3;
-        if (password.charAt(i) === "0") password.charAt(i) = 0;
-        if (password.charAt(i) === "l") password.charAt(i) = 1;
+        if (password.charAt(i) === "a") {
+            newPassword += '4'; 
+            continue;
+        }
+        if (password.charAt(i) === "e") {
+            newPassword += '3'; 
+            continue;
+        }
+        if (password.charAt(i) === "o") {
+            newPassword += '0'; 
+            continue;
+        }
+        if (password.charAt(i) === "l") {
+            newPassword += '1'; 
+            continue;
+        }
+        newPassword += password.charAt(i);
     }
-    console.log(password);
+    console.log(newPassword);
 }
 
 obfuscate(args[2]);
