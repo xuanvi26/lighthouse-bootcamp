@@ -90,20 +90,37 @@ var library = {
   var uid = function() {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
-  
+
   
   // adds a track to the library
   
   var addTrack = function (name, artist, album) {
-  
+    var uniqueId = uid();
+    var newTrackObj = {
+      'id': uniqueId,
+      'name': name,
+      'artist': artist,
+      'album': album
+    }
+    library.tracks[uniqueId] = newTrackObj;
   }
+
   
   
   // adds a playlist to the library
   
   var addPlaylist = function (name) {
-  
+    var uniqueId = uid();
+    var newPlaylistObj = {
+      'id': uniqueId,
+      'name': name,
+      'tracks': []
+    }
+    library.playlists[uniqueId] = newPlaylistObj;
   }
+
+  addPlaylist('hello');
+  printPlaylists();
   
   
   // STRETCH:
