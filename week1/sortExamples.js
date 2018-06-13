@@ -23,6 +23,7 @@ console.log('Sorted without a compare function:', mixedNumericArray.sort());
 console.log('Sorted with compareNumbers:', mixedNumericArray.sort(compareNumbers));
 */
 
+/*
 // the array to be sorted
 var list = ['Delta', 'alpha', 'CHARLIE', 'bravo'];
 
@@ -54,3 +55,11 @@ var result = mapped.map(function(el){
 });
 
 console.log('Taking the VALUE of the indexes (keys) and putting them into the new sorted array:', result)
+*/
+
+var array = [10, 2, 5, 1, 9];
+array.sort(function(a, b,) {
+    return a - b;
+});
+
+console.log(array);
