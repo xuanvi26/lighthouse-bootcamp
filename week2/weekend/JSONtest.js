@@ -1,5 +1,5 @@
 var str = '{"a":1, "b":2, "foo":"bar"}'; // string version of a JS Object
-var obj = JSON.parse(str);
+var obj = JSON.parse(str); //deserialized (string --> object)
 
 console.log(typeof(obj));
 console.log(obj);     // an Object that has been deserialized
