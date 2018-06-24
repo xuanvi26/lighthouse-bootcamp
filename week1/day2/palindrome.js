@@ -3,7 +3,7 @@ function isPalindrome(str) {
     var mid = Math.floor(processedStr.length/2);
     var last = processedStr.length - 1;
   
-    for (var i = 0; i < mid; i++) {
+     for (var i = 0; i < mid; i++) {
       if (processedStr[i] !== processedStr[last - i]) return false;
     } 
     return true;
