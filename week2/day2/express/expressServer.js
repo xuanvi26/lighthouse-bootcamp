@@ -1,18 +1,15 @@
-var express = require("express");
-var app = express();
-var PORT = 8080; // default port 8080
+const express = require("express");
+const app = express();
+const PORT = 8080; // default port 8080
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
+const bcrypt = require('bcrypt');
 
 app.set("view engine", "ejs");
 
 const generateRandomString = () => {
-    let uniqueSURL = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for (let i = 0; i < 6; i++) {
-        uniqueSURL += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    return uniqueSURL;
+    let uniqueSURL = Math.floor(Math.random() * 10000000).toString();
+    return u
 }
 
 var urlDatabase = {
