@@ -2,32 +2,50 @@ class Account {
 
     constructor(username) {
         this.username = username;
-        this.balance = 0;
+        this.transactions = [];
+    }
+
+    get balance() {
+        let balance = 0;
+        this.transactions.forEach(elem => {
+            balance += elem.value;
+        });
+        return balance;
+    }
+
+    addTransaction(transaction) {
+        this.transactions.push(transaction);
     }
 
 }
 
 class Transaction {
 
-    constructor(amount. account) {
+    constructor(amount, account) {
         this.amount = amount;
         this.account = account;
+    }
+
+    commit() {
+        if (this.account.balance <= this.amount && this.value < 0) return;
+        this.time = new Date();
+        this.account.addTransaction(this);
     }
 
 }
 
 class Deposit extends Transaction {
 
-    commit() {
-        this.account.balance += this.amount;
+    get value () {
+        return this.amount;
     }
 
 }
 
 class Withdrawal extends Transaction {
 
-    commit() {
-        this.account.balance -= this.amount;
+    get value() {
+        return -this.amount;
     }
 
 }
