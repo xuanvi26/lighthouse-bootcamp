@@ -57,7 +57,13 @@ class Employee {
 
       // Returns the employee object with that name, or null if no employee exists with that name
     employeeWithName(name) {
-
+        let employee = null;
+        if (this.name === name) return this;
+        for (const subordinate of this.subordinates) {
+            if (employee) break;
+            employee = subordinate.employeeWithName(name);
+        }
+        return employee;
     }
 }
 
@@ -74,5 +80,5 @@ ada.addSubordinate(angela);
 ada.addSubordinate(phil);
 
 console.log(ada.employeesThatMakeOver(1000000));
-
 console.log(ada.totalEmployees);
+console.log(ada.employeeWithName("craig"));
