@@ -29,6 +29,36 @@ class Employee {
     hasSameBoss(employee) {
         return (employee.boss === this.boss);
     }
+
+    employeesThatMakeOver(amount) {
+
+        let employees = [];
+
+        if (this.salary > amount) {
+          employees.push(this);
+        }
+    
+        for (const subordinate of this.subordinates) {
+          const subs = subordinate.employeesThatMakeOver(amount);
+          employees = employees.concat(subs);
+        }
+    
+        return employees;
+    }
+
+    get totalEmployees() {
+        let totalEmployees = 0;
+        for (const subordinate of this.subordinates) {
+            subordinate.totalEmployees;
+            totalEmployees++;
+        }
+        return totalEmployees;
+    }
+
+      // Returns the employee object with that name, or null if no employee exists with that name
+    employeeWithName(name) {
+
+    }
 }
 
 const ada      = new Employee("Ada", "CEO", 3000000.00);
@@ -43,4 +73,6 @@ ada.addSubordinate(arvinder);
 ada.addSubordinate(angela);
 ada.addSubordinate(phil);
 
-console.log(craig.numberOfPplToCeo);
+console.log(ada.employeesThatMakeOver(1000000));
+
+console.log(ada.totalEmployees);
