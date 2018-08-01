@@ -11,20 +11,20 @@ const searchLinear = (array, item) => {
     return index;
 }
 
-const searchBinary = (array, item) => {
+// const searchBinary = (array, item) => {
 
-    let min = 0;
-    let max = array.length - 1;
+//     let min = 0;
+//     let max = array.length - 1;
 
-    while (true) {
-        const avg = Math.floor((min + max / 2));
-        const cur = array[avg];
-        if (cur === item) return avg;
-        else if (cur < item) min = avg + 1;
-        else max = avg - 1;
-        if (min > max) return null;
-    }
-}
+//     while (min < max) {
+//         const avg = Math.floor((min + max / 2));
+//         const cur = array[avg];
+//         if (cur === item) return avg;
+//         else if (cur < item) min = avg + 1;
+//         else max = avg - 1;
+//     }
+//     return null;
+// }
 
 function search(array, item) {
     let min = 0;
