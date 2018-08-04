@@ -7,6 +7,3 @@ function printItems(array) {
 
 const array = ["😎", [["💩", ["🤗"]], [[["😼"]], "😂"]]];
 printItems(array);
-
-// base case: when item is not an array
-// recursive case: when item is an array

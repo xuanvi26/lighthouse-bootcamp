@@ -1,11 +1,11 @@
-var str = '{"a":1, "b":2, "foo":"bar"}'; // string version of a JS Object
-var obj = JSON.parse(str); //deserialized (string --> object)
+var str = '{"a":1, "b":2, "foo":"bar"}'; 
+var obj = JSON.parse(str); 
 
 console.log(typeof(obj));
-console.log(obj);     // an Object that has been deserialized
+console.log(obj);  
 
-delete obj.foo;       // modify the object
-var string = JSON.stringify(obj);  // serialize it back to a string
+delete obj.foo;       
+var string = JSON.stringify(obj);  
 
 console.log(typeof(string));
 console.log(string);
