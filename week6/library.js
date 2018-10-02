@@ -24,6 +24,17 @@ class Library {
         this.playlists.push(playlist);
     }
 
+    getAllTracks() {
+        let allTracks = [];
+        for (let playlist of this.playlists) {
+            for (let track of playlist.tracks) {
+                console.log('iterating through tracks', track)
+                allTracks.push(track);
+            }
+        }
+        return allTracks;
+    }
+
 }
 
 class Playlist {
@@ -106,14 +117,18 @@ let nightLife = new Playlist('Night Life');
 let anonymous = new Playlist();
 lib.addPlaylist(nightLife);
 lib.addPlaylist(anonymous);
-console.log(lib.getPlaylists());
+// console.log(lib.getPlaylists());
 
 let trackA = new Track('Dance Dance', 5, 154)
 let trackB = new Track('Move to the Music', 2, 204)
+let trackC = new Track('Together Forever', 5, 239)
 nightLife.addTrack(trackA);
 nightLife.addTrack(trackB);
-console.log(nightLife.getTracks());
+anonymous.addTrack(trackC);
+// console.log(nightLife.getTracks());
 console.log(lib.getPlaylists());
 
-console.log(lib.playlists[0].overallRating());
-console.log(lib.playlists[0].totalDuration());
+// console.log(lib.playlists[0].overallRating());
+// console.log(lib.playlists[0].totalDuration());
+
+console.log(lib.getAllTracks());
