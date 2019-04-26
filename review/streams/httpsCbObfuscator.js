@@ -1,6 +1,6 @@
 var https = require('https');
 
-var getHTML = require('./httpRequestExercise');
+var getHTML = require('./httpsGetRequest');
 
 var requestOptions = {
   host: 'sytantris.github.io',
