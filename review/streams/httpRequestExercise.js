@@ -33,7 +33,7 @@ var https = require("https");
 // AT STEP 4-5 OF THE CURRENT EXERCISE
 
 
-function getHTML(options, callback) {
+module.exports = function getHTML(options, callback) {
 
     var dataStr = '';
   
@@ -57,13 +57,13 @@ function getHTML(options, callback) {
   
   }
 
-  var requestOptions = {
-    host: 'sytantris.github.io',
-    path: '/http-examples/step2.html'
-  };
+//   var requestOptions = {
+//     host: 'sytantris.github.io',
+//     path: '/http-examples/step2.html'
+//   };
 
-function printHTML(htmlStr) {
-  console.log(htmlStr);
-}
+// function printHTML(htmlStr) {
+//   console.log(htmlStr);
+// }
 
-getHTML(requestOptions, printHTML);
+// getHTML(requestOptions, printHTML);
