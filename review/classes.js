@@ -7,24 +7,29 @@ class Person {
     }
 
     getBio() {
-        console.log(name, 'is', age, 'years old. They were born on', dateOfBirth);
+        return `${this.name} is ${this.age} years old. They were born on ${this.dateOfBirth}.`;
     }
 
 }
 
 class Student extends Person {
 
-    constructor(cohort, faculty) {
+    // constructor(cohort, faculty) {
+    //     this.cohort = cohort;
+    //     this.faculty = faculty;
+    // }
+
+    enroll(cohort, faculty) {
         this.cohort = cohort;
         this.faculty = faculty;
     }
 
     getBio() {
-        console.log(name, 'is', age, 'years old. They were born on', dateOfBirth + '.');
-        console.log('They are a student. They are part of the', cohort, 'of the', faculty, 'faculty.')
+        return (`${super.getBio()} ${this.name} is also a student. They are part of the ${this.cohort} cohort of the ${this.faculty} faculty.`)
     }
 
 }
 
-let julia = new Student(2021, 'mathematics');
-julia.getBio();
+let julia = new Student('Julia', 23, '1995-10-08');
+julia.enroll(2021, 'mathematics');
+console.log(julia.getBio());
