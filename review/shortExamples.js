@@ -7,3 +7,4 @@ delete obj.foo;       // modify the object
 var str2= JSON.stringify(obj);  // serialize it back to a string
 
 console.log(str2, typeof str2)
+

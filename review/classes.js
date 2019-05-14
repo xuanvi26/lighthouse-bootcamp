@@ -1,13 +1,18 @@
 class Person {
 
     constructor(name, age, dateOfBirth) {
-        this.name = name;
+        this._name = name;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
     }
 
     getBio() {
         return `${this.name} is ${this.age} years old. They were born on ${this.dateOfBirth}.`;
+    }
+
+    set name (newname) {
+        console.log('hello?????')
+        this._name = newname;
     }
 
 }
@@ -33,3 +38,7 @@ class Student extends Person {
 let julia = new Student('Julia', 23, '1995-10-08');
 julia.enroll(2021, 'mathematics');
 console.log(julia.getBio());
+
+julia.name = 'Jessica';
+
+console.log(julia.getBio())
