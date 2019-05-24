@@ -31,4 +31,28 @@ function printNestedArray(array) {
 
 }
 
-printNestedArray([1,2,[3,4],[[[[5]]]]]);
+// printNestedArray([1,2,[3,4],[[[[5]]]]]);
+
+function sumNestedArray(array) {
+
+    let result = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            result += sumNestedArray(array[i]);
+        } else result += array[i];
+    }
+
+    return result;
+
+    //base case: n is 0 (last number)
+    // if (n === 0) return array[n];
+
+    //recursive case: keep summing as long as there are numbers
+    // else return (array[n] + sumNestedArray(array, n-1));
+
+}
+
+
+console.log(sumNestedArray([1,2,[3,4],[[[[5]]]]]))
+// console.log(sumNestedArray([1,2,3,4,5], 4));
