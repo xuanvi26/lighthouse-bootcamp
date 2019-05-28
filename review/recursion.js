@@ -73,4 +73,14 @@ function sum(a, i) {
 }
 
 let input = [1, 2, [1, 2], 3, [5]];
-console.log(sum((input, input.length - 1), 14));
+// console.log(sum(input, input.length - 1));
+
+
+function factorial(n) {
+    if (n === 1) return 1;
+    
+    else return n * factorial(n-1);
+    
+  }
+  
+console.log(factorial(4));
