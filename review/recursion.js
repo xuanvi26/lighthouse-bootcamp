@@ -54,5 +54,23 @@ function sumNestedArray(array) {
 }
 
 
-console.log(sumNestedArray([1,2,[3,4],[[[[5]]]]]))
+// console.log(sumNestedArray([1,2,[3,4],[[[[5]]]]]))
 // console.log(sumNestedArray([1,2,3,4,5], 4));
+
+//i is the index, a is the array
+function sum(a, i) {
+    if (i < 0) {
+        return 0;
+    }
+
+    let current = a[i];
+
+    if (Array.isArray(a[i])) {
+        current = sum(a[i], a[i].length - 1);
+    }
+
+    return current + sum(a, i - 1);
+}
+
+let input = [1, 2, [1, 2], 3, [5]];
+console.log(sum((input, input.length - 1), 14));
