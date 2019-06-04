@@ -85,7 +85,6 @@ function factorial(n) {
   
 console.log(factorial(4));
 
-//n is the number of occurances it will happen (for example indices, kind of like a tracker)
 function fact(acc, n) {
     if (n === 1) {
         return acc;
