@@ -2,6 +2,8 @@ function shouldBuyCar(car) {
     if (car === undefined) {
       throw new Error("No Car!");
     }
+
+    if (car.type === 'kutrinh') throw new Error('Invalid type!')
   
     if (car.type && car.type.toLowerCase() === "hatchback") {
       return false;
